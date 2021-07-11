@@ -2,7 +2,7 @@
 
 Donation/Support buttons to allow you to add your favorite support buttons like: Paypal, Ko-fi or Patreon and more.
 
-![screenshot](https://github.com/flajt/flutter_donation_buttons/screenshots/screenshot.jpg)
+![screenshot](https://raw.githubusercontent.com/Flajt/flutter_donation_buttons/master/screenshots/screenshot.jpg)
 ## Getting Started
 
 `import 'package:flutter_donation_buttons/flutter_donation_buttons.dart';`
