@@ -1,6 +1,6 @@
 name: flutter_donation_buttons
 description: A collection of your most used donation/support buttons to support your development.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/Flajt/flutter_donation_buttons
 repository: https://github.com/Flajt/flutter_donation_buttons
 environment:
@@ -22,7 +22,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-  uses-material-design: true
   assets:
     - "assets/coffe.png"
     - "assets/coffe2.png"

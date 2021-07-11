@@ -2,8 +2,7 @@
 
 Donation/Support buttons to allow you to add your favorite support buttons like: Paypal, Ko-fi or Patreon and more.
 
-![default](screenshots/screenshot.jpg)
-
+![screenshot](https://github.com/flajt/flutter_donation_buttons/screenshots/screenshot.jpg)
 ## Getting Started
 
 `import 'package:flutter_donation_buttons/flutter_donation_buttons.dart';`
@@ -104,13 +103,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ### Supported Buttons:
  - Kofi (4 Colors)
- - PayPal
- - Patreon
-
+ - PayPal (Custom Colors)
+ - Patreon (Default orange)
+ - Buy Me A Coffe (5 Colors)
 
 ### Need a different button? Or a Feature?
 Simply open a new issue on Github with your desired button and a link to their website, and I will try to add it asap.
 
 ### Like what you see?
 If you want to donate some bucks, feel free to do so.
+<br>
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J25543M)
