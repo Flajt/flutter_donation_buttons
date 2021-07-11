@@ -1,7 +1,8 @@
 # flutter_donation_buttons
 
-Donation/Support buttons to allow you to add your favorite support buttons like: Paypal, Ko-fi or Patreon.
+Donation/Support buttons to allow you to add your favorite support buttons like: Paypal, Ko-fi or Patreon and more.
 
+![default](screenshots/screenshot.jpg)
 
 ## Getting Started
 
@@ -25,7 +26,8 @@ Example:
 Notice, I don't use the `canLaunch` as it sometimes returned false, but could still launch the url if tested.
 I also removed the snippets for tel, email etc. as this packge shouldn't need them. 
 
-Starting from API 30 Android requires package visibility configuration in your AndroidManifest.xml otherwise canLaunch will return false. A <queries> element must be added to your manifest as a child of the root element.
+Starting from API 30 Android requires package visibility configuration in your AndroidManifest.xml otherwise canLaunch will return false. 
+A `<queries>` element must be added to your manifest as a child of the root element.
 
 The snippet below shows an example for an application that uses https URLs with url_launcher. See the [Android documentation](https://developer.android.com/training/package-visibility/use-cases) for examples of other queries.
 ```xml
@@ -48,7 +50,7 @@ Kofi comes with 4 colors (taken from the offical brand site)
 
 ```dart
 
-mport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_donation_buttons/flutter_donation_buttons.dart';
 void main() {
   runApp(MyApp());
