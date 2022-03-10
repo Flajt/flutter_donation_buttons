@@ -13,11 +13,15 @@ class BuyMeACoffeButton extends StatelessWidget {
 
   ///Your buymeacoffe.com name e.g. flajt
   final String buyMeACoffeName;
+
+  ///fonction to call after opening the url
+  final VoidCallback? onDonation;
   const BuyMeACoffeButton(
       {Key? key,
       this.text = "Buy me a Coffe",
       this.color = BuyMeACoffeColor.Yellow,
-      required this.buyMeACoffeName})
+      required this.buyMeACoffeName,
+      this.onDonation})
       : super(key: key);
   final String baseUrl = "https://www.buymeacoffee.com/";
   @override
@@ -36,6 +40,9 @@ class BuyMeACoffeButton extends StatelessWidget {
           launch(baseUrl + buyMeACoffeName);
         } catch (e) {
           print("Error: $e");
+        }
+        if (onDonation != null) {
+          onDonation!();
         }
       },
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [

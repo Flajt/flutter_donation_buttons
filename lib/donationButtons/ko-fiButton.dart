@@ -16,11 +16,15 @@ class KofiButton extends StatelessWidget {
   ///Name of your account on kofi in lowercase, you can get it if you visit your page.
   ///How does a name look like: flajt , how does the full url look like? https://ko-fi.com/flajt <- this part after the / is your account name
   final String kofiName;
+
+  ///fonction to call after opening the url
+  final VoidCallback? onDonation;
   const KofiButton(
       {Key? key,
       this.text = "Support me on Ko-fi",
       required this.kofiName,
-      this.kofiColor = KofiColor.Blue})
+      this.kofiColor = KofiColor.Blue,
+      this.onDonation})
       : super(key: key);
 
   ///Base Url: https://ko-fi.com/ <- your account name will be appended to its
@@ -41,6 +45,9 @@ class KofiButton extends StatelessWidget {
           launch(baseUrl + kofiName);
         } catch (e) {
           print("Error: $e");
+        }
+        if (onDonation != null) {
+          onDonation!();
         }
       },
       icon: Icon(SimpleIcons.kofi),

@@ -11,10 +11,14 @@ class PatreonButton extends StatelessWidget {
   ///How to get it?
   ///visit your patreon page: https://patreon.com/buttonshy <- part after the / is your name
   final String patreonName;
+
+  ///fonction to call after opening the url
+  final VoidCallback? onDonation;
   const PatreonButton(
       {Key? key,
       this.text = "Support me on Patreon",
-      required this.patreonName})
+      required this.patreonName,
+      this.onDonation})
       : super(key: key);
 
   ///Patreon base url
@@ -28,6 +32,9 @@ class PatreonButton extends StatelessWidget {
           launch(baseUrl + this.patreonName);
         } catch (e) {
           print("Error: $e");
+        }
+        if (onDonation != null) {
+          onDonation!();
         }
       },
       icon: FaIcon(
