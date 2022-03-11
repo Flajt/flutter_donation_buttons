@@ -13,7 +13,7 @@ class PayPalButton extends StatelessWidget {
   ///If you want to change the color to maybe yellow, be aware of brand guidelines!
   final Color? color;
 
-  ///fonction to call after opening the url
+  ///function to call after opening the url
   final VoidCallback? onDonation;
   const PayPalButton(
       {Key? key,

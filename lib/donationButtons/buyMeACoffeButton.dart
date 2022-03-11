@@ -14,7 +14,7 @@ class BuyMeACoffeButton extends StatelessWidget {
   ///Your buymeacoffe.com name e.g. flajt
   final String buyMeACoffeName;
 
-  ///fonction to call after opening the url
+  ///function to call after opening the url
   final VoidCallback? onDonation;
   const BuyMeACoffeButton(
       {Key? key,

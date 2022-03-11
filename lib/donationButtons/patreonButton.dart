@@ -12,7 +12,7 @@ class PatreonButton extends StatelessWidget {
   ///visit your patreon page: https://patreon.com/buttonshy <- part after the / is your name
   final String patreonName;
 
-  ///fonction to call after opening the url
+  ///function to call after opening the url
   final VoidCallback? onDonation;
   const PatreonButton(
       {Key? key,

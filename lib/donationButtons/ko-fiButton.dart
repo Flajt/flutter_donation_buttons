@@ -17,7 +17,7 @@ class KofiButton extends StatelessWidget {
   ///How does a name look like: flajt , how does the full url look like? https://ko-fi.com/flajt <- this part after the / is your account name
   final String kofiName;
 
-  ///fonction to call after opening the url
+  ///function to call after opening the url
   final VoidCallback? onDonation;
   const KofiButton(
       {Key? key,
