@@ -12,11 +12,15 @@ class PayPalButton extends StatelessWidget {
 
   ///If you want to change the color to maybe yellow, be aware of brand guidelines!
   final Color? color;
+
+  ///function to call after opening the url
+  final VoidCallback? onDonation;
   const PayPalButton(
       {Key? key,
       this.donationText = "Donate with Paypal",
       required this.paypalButtonId,
-      this.color})
+      this.color,
+      this.onDonation})
       : super(key: key);
 
   ///Paypal base url for donations
@@ -34,6 +38,9 @@ class PayPalButton extends StatelessWidget {
               launch(baseUrl + paypalButtonId);
             } catch (e) {
               print("Error: $e");
+            }
+            if (onDonation != null) {
+              onDonation!();
             }
           }),
     );
