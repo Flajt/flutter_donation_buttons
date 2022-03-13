@@ -45,6 +45,8 @@ After you added the most recent version of this plugin to your *pubspec.yaml* fi
 Each button allows to change the text of the button if you like.
 Kofi comes with 4 colors (taken from the offical brand site)
 
+You can now also run your own code after the button has been pressed, allowing you to run e.g. a Thank You message for what ever else you like. Notice: The package doesn't support checking if a user donated or just checked out your page!
+
 ### Example:
 
 ```dart
@@ -89,7 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            KofiButton(kofiName: "flajt",kofiColor: KofiColor.Red,),
+            KofiButton(kofiName: "flajt",kofiColor: KofiColor.Red,onDonation: (){
+              print("On Donation!");
+              }),
             PayPalButton(paypalButtonId: "T6NT2YYTVX6VS"),
             PatreonButton(patreonName: "buttonshy") // Just someone I stumbled accross on Patreon as an example, not affiliaited with him
           ],

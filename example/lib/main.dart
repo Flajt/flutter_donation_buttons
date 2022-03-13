@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_donation_buttons/flutter_donation_buttons.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -13,13 +15,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Donation Buttons Demo Home Page'),
+      home: const MyHomePage(title: 'Donation Buttons Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -38,9 +40,19 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            KofiButton(kofiName: "flajt",kofiColor: KofiColor.Red,),
-            PayPalButton(paypalButtonId: "T6NT2YYTVX6VS"),
-            PatreonButton(patreonName: "buttonshy") // Just someone I stumbled accross on Patreon as an example, not affiliaited with him
+            KofiButton(
+              kofiName: "flajt",
+              kofiColor: KofiColor.Red,
+              onDonation: () {
+                print("On donation"); // Runs after the button has been pressed
+              },
+            ),
+            const PayPalButton(paypalButtonId: "T6NT2YYTVX6VS"),
+            const PatreonButton(patreonName: "buttonshy"),
+            const BuyMeACoffeButton(
+              buyMeACoffeName: "flajt",
+              color: BuyMeACoffeColor.Green,
+            ), // Just someone I stumbled accross on Patreon as an example, not affiliaited with him
           ],
         ),
       ),

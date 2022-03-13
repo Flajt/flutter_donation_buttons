@@ -6,9 +6,9 @@ import 'package:flutter_donation_buttons/flutter_donation_buttons.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  
   runApp(MyApp());
 }
+
 class MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
 

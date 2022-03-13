@@ -8,3 +8,9 @@ Fixed some small staff in the documentation, tried to format the data better
 - Added example folder and main.dart
 - Added [Buy me a coffe](https://www.buymeacoffee.com) button
 - Added images
+
+## 0.0.4
+- Added `onDonation` optional callback to allow additional logic to run after a user donated something based on: [PR #1](https://github.com/Flajt/flutter_donation_buttons/pull/1). Thanks a lot to [@hatch01](https://github.com/hatch01)
+- Updated example code with onDonation example
+- Removed FontAwesome Icons as SimpleIcons already covered all icons to improve package size
+- Added code so everyone can easily run the example

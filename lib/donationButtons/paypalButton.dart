@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 ///PayPal donate buttons
@@ -31,7 +31,7 @@ class PayPalButton extends StatelessWidget {
     return Container(
       child: ElevatedButton.icon(
           label: Text(this.donationText),
-          icon: FaIcon(FontAwesomeIcons.paypal),
+          icon: Icon(SimpleIcons.paypal),
           style: ElevatedButton.styleFrom(primary: color ?? Colors.blue[600]),
           onPressed: () {
             try {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 ///Patreon support button
@@ -27,9 +27,9 @@ class PatreonButton extends StatelessWidget {
   Widget build(BuildContext context) {
     assert(patreonName.isNotEmpty);
     return ElevatedButton.icon(
-      onPressed: () {
+      onPressed: () async {
         try {
-          launch(baseUrl + this.patreonName);
+          await launch(baseUrl + this.patreonName);
         } catch (e) {
           print("Error: $e");
         }
@@ -37,8 +37,8 @@ class PatreonButton extends StatelessWidget {
           onDonation!();
         }
       },
-      icon: FaIcon(
-        FontAwesomeIcons.patreon,
+      icon: Icon(
+        SimpleIcons.patreon,
         color: Colors.black,
       ),
       label: Text(text),
