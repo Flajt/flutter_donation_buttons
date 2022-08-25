@@ -14,3 +14,8 @@ Fixed some small staff in the documentation, tried to format the data better
 - Updated example code with onDonation example
 - Removed FontAwesome Icons as SimpleIcons already covered all icons to improve package size
 - Added code so everyone can easily run the example
+
+### 0.0.5
+ - upgrade dependencies to be up to date
+ - upgrade dart sdk version
+ - upgrade flutter sdk version
