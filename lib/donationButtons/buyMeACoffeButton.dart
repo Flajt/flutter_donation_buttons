@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 ///Colors to choose from
 enum BuyMeACoffeColor { Yellow, Orange, Violet, Blue, Green }
@@ -37,7 +38,7 @@ class BuyMeACoffeButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         try {
-          launch(baseUrl + buyMeACoffeName);
+          launchUrlString(baseUrl + buyMeACoffeName);
         } catch (e) {
           print("Error: $e");
         }

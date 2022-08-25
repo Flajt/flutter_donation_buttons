@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 ///Patreon support button
 class PatreonButton extends StatelessWidget {
@@ -29,7 +30,7 @@ class PatreonButton extends StatelessWidget {
     return ElevatedButton.icon(
       onPressed: () async {
         try {
-          await launch(baseUrl + this.patreonName);
+          await launchUrlString(baseUrl + this.patreonName);
         } catch (e) {
           print("Error: $e");
         }

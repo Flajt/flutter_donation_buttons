@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 ///The 4 Offical Kofi Button Colors
 enum KofiColor { Blue, Black, Orange, Red }
@@ -42,7 +43,7 @@ class KofiButton extends StatelessWidget {
     return ElevatedButton.icon(
       onPressed: () {
         try {
-          launch(baseUrl + kofiName);
+          launchUrlString(baseUrl + kofiName);
         } catch (e) {
           print("Error: $e");
         }

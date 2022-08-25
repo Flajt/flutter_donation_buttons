@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_icons/simple_icons.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 ///PayPal donate buttons
 class PayPalButton extends StatelessWidget {
@@ -35,7 +35,7 @@ class PayPalButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(primary: color ?? Colors.blue[600]),
           onPressed: () {
             try {
-              launch(baseUrl + paypalButtonId);
+              launchUrlString(baseUrl + paypalButtonId);
             } catch (e) {
               print("Error: $e");
             }

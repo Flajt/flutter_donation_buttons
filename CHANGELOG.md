@@ -19,3 +19,4 @@ Fixed some small staff in the documentation, tried to format the data better
  - upgrade dependencies to be up to date
  - upgrade dart sdk version
  - upgrade flutter sdk version
+ - changed `launch` to `launchUrlString`
