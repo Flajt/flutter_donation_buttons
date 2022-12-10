@@ -3,42 +3,42 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 ///Colors to choose from
-enum BuyMeACoffeColor { Yellow, Orange, Violet, Blue, Green }
+enum BuyMeACoffeeColor { Yellow, Orange, Violet, Blue, Green }
 
-class BuyMeACoffeButton extends StatelessWidget {
+class BuyMeACoffeeButton extends StatelessWidget {
   ///Text to display
   final String text;
 
-  ///One of the [BuyMeACoffeColor] colors, to color your button with
-  final BuyMeACoffeColor color;
+  ///One of the [BuyMeACoffeeColor] colors, to color your button with
+  final BuyMeACoffeeColor color;
 
-  ///Your buymeacoffe.com name e.g. flajt
-  final String buyMeACoffeName;
+  ///Your buymeacoffee.com name e.g. flajt
+  final String buyMeACoffeeName;
 
   ///function to call after opening the url
   final VoidCallback? onDonation;
-  const BuyMeACoffeButton(
+  const BuyMeACoffeeButton(
       {Key? key,
-      this.text = "Buy me a Coffe",
-      this.color = BuyMeACoffeColor.Yellow,
-      required this.buyMeACoffeName,
+      this.text = "Buy me a Coffee",
+      this.color = BuyMeACoffeeColor.Yellow,
+      required this.buyMeACoffeeName,
       this.onDonation})
       : super(key: key);
   final String baseUrl = "https://www.buymeacoffee.com/";
   @override
   Widget build(BuildContext context) {
     Map<String, Color> _colors = {
-      "BuyMeACoffeColor.Yellow": Color(0xffffdd00),
-      "BuyMeACoffeColor.Orange": Color(0xffff5f5f),
-      "BuyMeACoffeColor.Violet": Color(0xffbd5fff),
-      "BuyMeACoffeColor.Blue": Color(0xff5f7fff),
-      "BuyMeACoffeColor.Green": Color(0xff40dca5)
+      "BuyMeACoffeeColor.Yellow": Color(0xffffdd00),
+      "BuyMeACoffeeColor.Orange": Color(0xffff5f5f),
+      "BuyMeACoffeeColor.Violet": Color(0xffbd5fff),
+      "BuyMeACoffeeColor.Blue": Color(0xff5f7fff),
+      "BuyMeACoffeeColor.Green": Color(0xff40dca5)
     };
 
     return ElevatedButton(
       onPressed: () {
         try {
-          launchUrlString(baseUrl + buyMeACoffeName);
+          launchUrlString(baseUrl + buyMeACoffeeName);
         } catch (e) {
           print("Error: $e");
         }
@@ -47,15 +47,15 @@ class BuyMeACoffeButton extends StatelessWidget {
         }
       },
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-        color != BuyMeACoffeColor.Yellow
-            ? Image.asset("assets/coffe.png",
+        color != BuyMeACoffeeColor.Yellow
+            ? Image.asset("assets/coffee.png",
                 package: "flutter_donation_buttons", width: 30, height: 30)
-            : Image.asset("assets/coffe2.png",
+            : Image.asset("assets/coffee2.png",
                 package: "flutter_donation_buttons", width: 30, height: 30),
         Text(
           text,
           style: TextStyle(
-              color: color != BuyMeACoffeColor.Yellow
+              color: color != BuyMeACoffeeColor.Yellow
                   ? Colors.white
                   : Colors.black,
               fontWeight: FontWeight.bold),

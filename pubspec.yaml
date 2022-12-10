@@ -22,8 +22,8 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - "assets/coffe.png"
-    - "assets/coffe2.png"
+    - "assets/coffee.png"
+    - "assets/coffee2.png"
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages
