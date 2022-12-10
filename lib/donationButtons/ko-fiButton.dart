@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-///The 4 Offical Kofi Button Colors
+///The 4 Official Kofi Button Colors
 enum KofiColor { Blue, Black, Orange, Red }
 
 ///A button to use if you link to Ko-fi
