@@ -32,7 +32,8 @@ class PayPalButton extends StatelessWidget {
       child: ElevatedButton.icon(
           label: Text(this.donationText),
           icon: Icon(SimpleIcons.paypal),
-          style: ElevatedButton.styleFrom(primary: color ?? Colors.blue[600]),
+          style: ElevatedButton.styleFrom(
+              backgroundColor: color ?? Colors.blue[600]),
           onPressed: () {
             try {
               launchUrlString(baseUrl + paypalButtonId);

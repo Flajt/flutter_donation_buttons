@@ -1,9 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_donation_buttons/donationButtons/ko-fiButton.dart';
-import 'package:flutter_donation_buttons/donationButtons/paypalButton.dart';
 import 'package:flutter_donation_buttons/flutter_donation_buttons.dart';
-import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   runApp(MyApp());

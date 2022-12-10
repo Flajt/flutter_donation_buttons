@@ -44,15 +44,16 @@ class _MyHomePageState extends State<MyHomePage> {
               kofiName: "flajt",
               kofiColor: KofiColor.Red,
               onDonation: () {
-                print("On donation"); // Runs after the button has been pressed
+                // Runs after the button has been pressed
+                debugPrint("On donation");
               },
             ),
             const PayPalButton(paypalButtonId: "T6NT2YYTVX6VS"),
             const PatreonButton(patreonName: "buttonshy"),
-            const BuyMeACoffeButton(
-              buyMeACoffeName: "flajt",
-              color: BuyMeACoffeColor.Green,
-            ), // Just someone I stumbled accross on Patreon as an example, not affiliaited with him
+            const BuyMeACoffeeButton(
+              buyMeACoffeeName: "flajt",
+              color: BuyMeACoffeeColor.Green,
+            ), // Just someone I stumbled across on Patreon as an example, not affiliated with him
           ],
         ),
       ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:simple_icons/simple_icons.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 ///Patreon support button
@@ -43,7 +42,7 @@ class PatreonButton extends StatelessWidget {
         color: Colors.black,
       ),
       label: Text(text),
-      style: ElevatedButton.styleFrom(primary: Colors.deepOrange),
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.deepOrange),
     );
   }
 }
