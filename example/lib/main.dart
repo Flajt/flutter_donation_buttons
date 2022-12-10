@@ -44,7 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
               kofiName: "flajt",
               kofiColor: KofiColor.Red,
               onDonation: () {
-                print("On donation"); // Runs after the button has been pressed
+                // Runs after the button has been pressed
+                debugPrint("On donation");
               },
             ),
             const PayPalButton(paypalButtonId: "T6NT2YYTVX6VS"),
