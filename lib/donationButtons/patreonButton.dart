@@ -43,7 +43,7 @@ class PatreonButton extends StatelessWidget {
         color: Colors.black,
       ),
       label: Text(text),
-      style: ElevatedButton.styleFrom(primary: Colors.deepOrange),
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.deepOrange),
     );
   }
 }

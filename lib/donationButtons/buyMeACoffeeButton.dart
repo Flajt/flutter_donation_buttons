@@ -64,7 +64,7 @@ class BuyMeACoffeeButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           minimumSize: Size(100, 20),
           fixedSize: Size(200, 42),
-          primary: _colors[color.toString()]),
+          backgroundColor: _colors[color.toString()]),
     );
   }
 }

@@ -53,7 +53,8 @@ class KofiButton extends StatelessWidget {
       },
       icon: Icon(SimpleIcons.kofi),
       label: Text(text),
-      style: ElevatedButton.styleFrom(primary: _colors[kofiColor.toString()]),
+      style: ElevatedButton.styleFrom(
+          backgroundColor: _colors[kofiColor.toString()]),
     );
   }
 }
