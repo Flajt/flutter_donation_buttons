@@ -27,3 +27,8 @@ Fixed some small staff in the documentation, tried to format the data better
 - Add lint: don't use print
 - Remove unused imports
 - Remove depreciated APIs + flutter format
+
+## 0.1.6
+- Attempt to use semantic versioning correctly
+- Allow custom styling while keeping button colors with new `style`. Thanks to [@collodi](https://github.com/collodi) for opening the issue.
+- Update example to reflect new feature
