@@ -14,11 +14,15 @@ class PatreonButton extends StatelessWidget {
 
   ///function to call after opening the url
   final VoidCallback? onDonation;
+
+  ///Optional custom styling, allows full customization incl. Color
+  final ButtonStyle? style;
   const PatreonButton(
       {Key? key,
       this.text = "Support me on Patreon",
       required this.patreonName,
-      this.onDonation})
+      this.onDonation,
+      this.style})
       : super(key: key);
 
   ///Patreon base url
@@ -27,22 +31,23 @@ class PatreonButton extends StatelessWidget {
   Widget build(BuildContext context) {
     assert(patreonName.isNotEmpty);
     return ElevatedButton.icon(
-      onPressed: () async {
-        try {
-          await launchUrlString(baseUrl + this.patreonName);
-        } catch (e) {
-          print("Error: $e");
-        }
-        if (onDonation != null) {
-          onDonation!();
-        }
-      },
-      icon: Icon(
-        SimpleIcons.patreon,
-        color: Colors.black,
-      ),
-      label: Text(text),
-      style: ElevatedButton.styleFrom(backgroundColor: Colors.deepOrange),
-    );
+        onPressed: () async {
+          try {
+            await launchUrlString(baseUrl + this.patreonName);
+          } catch (e) {
+            print("Error: $e");
+          }
+          if (onDonation != null) {
+            onDonation!();
+          }
+        },
+        icon: Icon(
+          SimpleIcons.patreon,
+          color: Colors.black,
+        ),
+        label: Text(text),
+        style: style == null
+            ? ElevatedButton.styleFrom(backgroundColor: Colors.deepOrange)
+            : style);
   }
 }

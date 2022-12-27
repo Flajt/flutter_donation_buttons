@@ -19,12 +19,16 @@ class KofiButton extends StatelessWidget {
 
   ///function to call after opening the url
   final VoidCallback? onDonation;
+
+  ///Optional custom styling
+  final ButtonStyle? style;
   const KofiButton(
       {Key? key,
       this.text = "Support me on Ko-fi",
       required this.kofiName,
       this.kofiColor = KofiColor.Blue,
-      this.onDonation})
+      this.onDonation,
+      this.style})
       : super(key: key);
 
   ///Base Url: https://ko-fi.com/ <- your account name will be appended to its
@@ -52,8 +56,13 @@ class KofiButton extends StatelessWidget {
       },
       icon: Icon(SimpleIcons.kofi),
       label: Text(text),
-      style: ElevatedButton.styleFrom(
-          backgroundColor: _colors[kofiColor.toString()]),
+      style: style == null
+          ? ElevatedButton.styleFrom(
+              backgroundColor: _colors[kofiColor.toString()])
+          : ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color?>(
+                      _colors[kofiColor.toString()]))
+              .merge(style),
     );
   }
 }

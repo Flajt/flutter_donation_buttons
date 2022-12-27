@@ -15,12 +15,16 @@ class PayPalButton extends StatelessWidget {
 
   ///function to call after opening the url
   final VoidCallback? onDonation;
+
+  ///Optional custom styling
+  final ButtonStyle? style;
   const PayPalButton(
       {Key? key,
       this.donationText = "Donate with Paypal",
       required this.paypalButtonId,
       this.color,
-      this.onDonation})
+      this.onDonation,
+      this.style})
       : super(key: key);
 
   ///Paypal base url for donations
@@ -32,8 +36,13 @@ class PayPalButton extends StatelessWidget {
       child: ElevatedButton.icon(
           label: Text(this.donationText),
           icon: Icon(SimpleIcons.paypal),
-          style: ElevatedButton.styleFrom(
-              backgroundColor: color ?? Colors.blue[600]),
+          style: style == null
+              ? ElevatedButton.styleFrom(
+                  backgroundColor: color ?? Colors.blue[600])
+              : ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(color ?? Colors.blue[600]))
+                  .merge(style),
           onPressed: () {
             try {
               launchUrlString(baseUrl + paypalButtonId);

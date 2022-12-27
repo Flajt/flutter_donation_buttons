@@ -16,12 +16,17 @@ class BuyMeACoffeeButton extends StatelessWidget {
 
   ///function to call after opening the url
   final VoidCallback? onDonation;
+
+  ///Optional custom styling
+  final ButtonStyle? style;
+
   const BuyMeACoffeeButton(
       {Key? key,
       this.text = "Buy me a Coffee",
       this.color = BuyMeACoffeeColor.Yellow,
       required this.buyMeACoffeeName,
-      this.onDonation})
+      this.onDonation,
+      this.style})
       : super(key: key);
   final String baseUrl = "https://www.buymeacoffee.com/";
   @override
@@ -60,10 +65,15 @@ class BuyMeACoffeeButton extends StatelessWidget {
               fontWeight: FontWeight.bold),
         ),
       ]),
-      style: ElevatedButton.styleFrom(
-          minimumSize: Size(100, 20),
-          fixedSize: Size(200, 42),
-          backgroundColor: _colors[color.toString()]),
+      style: style == null
+          ? ElevatedButton.styleFrom(
+              minimumSize: Size(100, 20),
+              fixedSize: Size(200, 42),
+              backgroundColor: _colors[color.toString()])
+          : ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color?>(
+                      _colors[color.toString()]))
+              .merge(style),
     );
   }
 }
