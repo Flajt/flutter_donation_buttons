@@ -49,11 +49,17 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             const PayPalButton(paypalButtonId: "T6NT2YYTVX6VS"),
-            const PatreonButton(patreonName: "buttonshy"),
+            const PatreonButton(
+                patreonName:
+                    "buttonshy"), // Just someone I stumbled across on Patreon as an example, not affiliated with him
+
             const BuyMeACoffeeButton(
               buyMeACoffeeName: "flajt",
               color: BuyMeACoffeeColor.Green,
-            ), // Just someone I stumbled across on Patreon as an example, not affiliated with him
+              //Allows custom styling
+              style: ButtonStyle(
+                  fixedSize: MaterialStatePropertyAll(Size(250, 100))),
+            ),
           ],
         ),
       ),
