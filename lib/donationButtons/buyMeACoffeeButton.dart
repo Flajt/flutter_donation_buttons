@@ -17,6 +17,9 @@ class BuyMeACoffeeButton extends StatelessWidget {
   ///function to call after opening the url
   final VoidCallback? onDonation;
 
+  ///function to call when launch url
+  final Future<bool> Function(String urlString)? onLaunchURL;
+
   ///Optional custom styling
   final ButtonStyle? style;
 
@@ -26,7 +29,8 @@ class BuyMeACoffeeButton extends StatelessWidget {
       this.color = BuyMeACoffeeColor.Yellow,
       required this.buyMeACoffeeName,
       this.onDonation,
-      this.style})
+      this.style,
+      this.onLaunchURL})
       : super(key: key);
   final String baseUrl = "https://www.buymeacoffee.com/";
   @override
@@ -40,11 +44,13 @@ class BuyMeACoffeeButton extends StatelessWidget {
     };
 
     return ElevatedButton(
-      onPressed: () {
+      onPressed: () async {
         try {
-          launchUrlString(baseUrl + buyMeACoffeeName);
+          await (onLaunchURL != null
+              ? onLaunchURL!(baseUrl + buyMeACoffeeName)
+              : launchUrlString(baseUrl + buyMeACoffeeName));
         } catch (e) {
-          print("Error: $e");
+          debugPrint("Error: $e");
         }
         if (onDonation != null) {
           onDonation!();
