@@ -42,7 +42,7 @@ class PatreonButton extends StatelessWidget {
                 ? onLaunchURL!(baseUrl + patreonName)
                 : launchUrlString(baseUrl + patreonName));
           } catch (e) {
-            print("Error: $e");
+            debugPrint("Error: $e");
           }
           if (onDonation != null) {
             onDonation!();

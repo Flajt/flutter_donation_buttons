@@ -50,7 +50,7 @@ class BuyMeACoffeeButton extends StatelessWidget {
               ? onLaunchURL!(baseUrl + buyMeACoffeeName)
               : launchUrlString(baseUrl + buyMeACoffeeName));
         } catch (e) {
-          print("Error: $e");
+          debugPrint("Error: $e");
         }
         if (onDonation != null) {
           onDonation!();

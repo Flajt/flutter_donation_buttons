@@ -55,7 +55,7 @@ class KofiButton extends StatelessWidget {
               ? onLaunchURL!(baseUrl + kofiName)
               : launchUrlString(baseUrl + kofiName));
         } catch (e) {
-          print("Error: $e");
+          debugPrint("Error: $e");
         }
         if (onDonation != null) {
           onDonation!();

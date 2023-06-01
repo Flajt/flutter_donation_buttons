@@ -36,3 +36,6 @@ Fixed some small staff in the documentation, tried to format the data better
 ## 0.2.6
 - Created new parameter called onDonate which allows for custom code to be executed instead of the typical url launcher method. Thanks to [@FriesI23](https://github.com/FriesI23)
 - Add pubspec.lock to .gitignore based on [this](https://stackoverflow.com/a/16136740) StackOverflow post
+
+## 0.2.7
+- Replace print with `debugPrint` in `try catch` statements
