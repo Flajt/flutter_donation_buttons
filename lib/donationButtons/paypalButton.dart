@@ -18,13 +18,18 @@ class PayPalButton extends StatelessWidget {
 
   ///Optional custom styling
   final ButtonStyle? style;
+
+  ///function to call when launch url
+  final Future<bool> Function(String urlString)? onLaunchURL;
+
   const PayPalButton(
       {Key? key,
       this.donationText = "Donate with Paypal",
       required this.paypalButtonId,
       this.color,
       this.onDonation,
-      this.style})
+      this.style,
+      this.onLaunchURL})
       : super(key: key);
 
   ///Paypal base url for donations
@@ -43,9 +48,11 @@ class PayPalButton extends StatelessWidget {
                       backgroundColor:
                           MaterialStateProperty.all(color ?? Colors.blue[600]))
                   .merge(style),
-          onPressed: () {
+          onPressed: () async {
             try {
-              launchUrlString(baseUrl + paypalButtonId);
+              await (onLaunchURL != null
+                  ? onLaunchURL!(baseUrl + paypalButtonId)
+                  : launchUrlString(baseUrl + paypalButtonId));
             } catch (e) {
               print("Error: $e");
             }

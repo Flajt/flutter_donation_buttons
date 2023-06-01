@@ -22,13 +22,18 @@ class KofiButton extends StatelessWidget {
 
   ///Optional custom styling
   final ButtonStyle? style;
+
+  ///function to call when launch url
+  final Future<bool> Function(String urlString)? onLaunchURL;
+
   const KofiButton(
       {Key? key,
       this.text = "Support me on Ko-fi",
       required this.kofiName,
       this.kofiColor = KofiColor.Blue,
       this.onDonation,
-      this.style})
+      this.style,
+      this.onLaunchURL})
       : super(key: key);
 
   ///Base Url: https://ko-fi.com/ <- your account name will be appended to its
@@ -44,9 +49,11 @@ class KofiButton extends StatelessWidget {
       "KofiColor.Black": Color(0xff434B57)
     };
     return ElevatedButton.icon(
-      onPressed: () {
+      onPressed: () async {
         try {
-          launchUrlString(baseUrl + kofiName);
+          await (onLaunchURL != null
+              ? onLaunchURL!(baseUrl + kofiName)
+              : launchUrlString(baseUrl + kofiName));
         } catch (e) {
           print("Error: $e");
         }
