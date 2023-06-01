@@ -32,3 +32,7 @@ Fixed some small staff in the documentation, tried to format the data better
 - Attempt to use semantic versioning correctly
 - Allow custom styling while keeping button colors with new `style`. Thanks to [@collodi](https://github.com/collodi) for opening the issue.
 - Update example to reflect new feature
+
+## 0.2.6
+- Created new parameter called onDonate which allows for custom code to be executed instead of the typical url launcher method. Thanks to [@FriesI23](https://github.com/FriesI23)
+- Add pubspec.lock to .gitignore based on [this](https://stackoverflow.com/a/16136740) StackOverflow post
