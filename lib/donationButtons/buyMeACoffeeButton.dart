@@ -23,15 +23,19 @@ class BuyMeACoffeeButton extends StatelessWidget {
   ///Optional custom styling
   final ButtonStyle? style;
 
-  const BuyMeACoffeeButton(
-      {Key? key,
-      this.text = "Buy me a Coffee",
-      this.color = BuyMeACoffeeColor.Yellow,
-      required this.buyMeACoffeeName,
-      this.onDonation,
-      this.style,
-      this.onLaunchURL})
-      : super(key: key);
+  ///If [isEnabled] == false, onPressed will not work and background color will be grey (BuyMeACoffeeColor.Grey)
+  final bool isEnabled;
+
+  const BuyMeACoffeeButton({
+    Key? key,
+    this.text = "Buy me a Coffee",
+    this.color = BuyMeACoffeeColor.Yellow,
+    required this.buyMeACoffeeName,
+    this.onDonation,
+    this.style,
+    this.onLaunchURL,
+    this.isEnabled = true,
+  }) : super(key: key);
   final String baseUrl = "https://www.buymeacoffee.com/";
   @override
   Widget build(BuildContext context) {
@@ -45,18 +49,20 @@ class BuyMeACoffeeButton extends StatelessWidget {
     };
 
     return ElevatedButton(
-      onPressed: () async {
-        try {
-          await (onLaunchURL != null
-              ? onLaunchURL!(baseUrl + buyMeACoffeeName)
-              : launchUrlString(baseUrl + buyMeACoffeeName));
-        } catch (e) {
-          debugPrint("Error: $e");
-        }
-        if (onDonation != null) {
-          onDonation!();
-        }
-      },
+      onPressed: !isEnabled
+          ? null
+          : () async {
+              try {
+                await (onLaunchURL != null
+                    ? onLaunchURL!(baseUrl + buyMeACoffeeName)
+                    : launchUrlString(baseUrl + buyMeACoffeeName));
+              } catch (e) {
+                debugPrint("Error: $e");
+              }
+              if (onDonation != null) {
+                onDonation!();
+              }
+            },
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         color != BuyMeACoffeeColor.Yellow
             ? Image.asset("assets/coffee.png",
@@ -76,10 +82,13 @@ class BuyMeACoffeeButton extends StatelessWidget {
           ? ElevatedButton.styleFrom(
               minimumSize: Size(100, 20),
               fixedSize: Size(200, 42),
-              backgroundColor: _colors[color.toString()])
+              backgroundColor: isEnabled
+                  ? _colors[color.toString()]
+                  : _colors[BuyMeACoffeeColor.Grey.toString()])
           : ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color?>(
-                      _colors[color.toString()]))
+                  backgroundColor: MaterialStateProperty.all<Color?>(isEnabled
+                      ? _colors[color.toString()]
+                      : _colors[BuyMeACoffeeColor.Grey.toString()]))
               .merge(style),
     );
   }
