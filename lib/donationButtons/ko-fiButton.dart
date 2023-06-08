@@ -3,7 +3,7 @@ import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 ///The 4 Official Kofi Button Colors
-enum KofiColor { Blue, Black, Orange, Red }
+enum KofiColor { Blue, Black, Orange, Red, Grey }
 
 ///A button to use if you link to Ko-fi
 class KofiButton extends StatelessWidget {
@@ -46,7 +46,8 @@ class KofiButton extends StatelessWidget {
       "KofiColor.Blue": Color(0xff29ABE0),
       "KofiColor.Red": Color(0xffFF5E5B),
       "KofiColor.Orange": Color(0xffFBAA19),
-      "KofiColor.Black": Color(0xff434B57)
+      "KofiColor.Black": Color(0xff434B57),
+      "KofiColor.Grey": Color(0xff9E9E9E)
     };
     return ElevatedButton.icon(
       onPressed: () async {

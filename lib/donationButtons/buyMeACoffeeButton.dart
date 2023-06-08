@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 ///Colors to choose from
-enum BuyMeACoffeeColor { Yellow, Orange, Violet, Blue, Green }
+enum BuyMeACoffeeColor { Yellow, Orange, Violet, Blue, Green, Grey }
 
 class BuyMeACoffeeButton extends StatelessWidget {
   ///Text to display
@@ -40,7 +40,8 @@ class BuyMeACoffeeButton extends StatelessWidget {
       "BuyMeACoffeeColor.Orange": Color(0xffff5f5f),
       "BuyMeACoffeeColor.Violet": Color(0xffbd5fff),
       "BuyMeACoffeeColor.Blue": Color(0xff5f7fff),
-      "BuyMeACoffeeColor.Green": Color(0xff40dca5)
+      "BuyMeACoffeeColor.Green": Color(0xff40dca5),
+      "BuyMeACoffeeColor.Grey": Color(0xff9E9E9E)
     };
 
     return ElevatedButton(
