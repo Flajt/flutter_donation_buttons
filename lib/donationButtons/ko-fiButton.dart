@@ -3,7 +3,7 @@ import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 ///The 4 Official Kofi Button Colors
-enum KofiColor { Blue, Black, Orange, Red }
+enum KofiColor { Blue, Black, Orange, Red, Grey }
 
 ///A button to use if you link to Ko-fi
 class KofiButton extends StatelessWidget {
@@ -26,15 +26,19 @@ class KofiButton extends StatelessWidget {
   ///function to call when launch url
   final Future<bool> Function(String urlString)? onLaunchURL;
 
-  const KofiButton(
-      {Key? key,
-      this.text = "Support me on Ko-fi",
-      required this.kofiName,
-      this.kofiColor = KofiColor.Blue,
-      this.onDonation,
-      this.style,
-      this.onLaunchURL})
-      : super(key: key);
+  ///If [isEnabled] == false, onPressed will not work and background color will be grey (BuyMeACoffeeColor.Grey)
+  final bool isEnabled;
+
+  const KofiButton({
+    Key? key,
+    this.text = "Support me on Ko-fi",
+    required this.kofiName,
+    this.kofiColor = KofiColor.Blue,
+    this.onDonation,
+    this.style,
+    this.onLaunchURL,
+    this.isEnabled = true,
+  }) : super(key: key);
 
   ///Base Url: https://ko-fi.com/ <- your account name will be appended to its
   final String baseUrl = "https://ko-fi.com/";
@@ -46,29 +50,35 @@ class KofiButton extends StatelessWidget {
       "KofiColor.Blue": Color(0xff29ABE0),
       "KofiColor.Red": Color(0xffFF5E5B),
       "KofiColor.Orange": Color(0xffFBAA19),
-      "KofiColor.Black": Color(0xff434B57)
+      "KofiColor.Black": Color(0xff434B57),
+      "KofiColor.Grey": Color(0xff9E9E9E)
     };
     return ElevatedButton.icon(
-      onPressed: () async {
-        try {
-          await (onLaunchURL != null
-              ? onLaunchURL!(baseUrl + kofiName)
-              : launchUrlString(baseUrl + kofiName));
-        } catch (e) {
-          debugPrint("Error: $e");
-        }
-        if (onDonation != null) {
-          onDonation!();
-        }
-      },
+      onPressed: !isEnabled
+          ? null
+          : () async {
+              try {
+                await (onLaunchURL != null
+                    ? onLaunchURL!(baseUrl + kofiName)
+                    : launchUrlString(baseUrl + kofiName));
+              } catch (e) {
+                debugPrint("Error: $e");
+              }
+              if (onDonation != null) {
+                onDonation!();
+              }
+            },
       icon: Icon(SimpleIcons.kofi),
       label: Text(text),
       style: style == null
           ? ElevatedButton.styleFrom(
-              backgroundColor: _colors[kofiColor.toString()])
+              backgroundColor: isEnabled
+                  ? _colors[kofiColor.toString()]
+                  : _colors[KofiColor.Grey.toString()])
           : ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color?>(
-                      _colors[kofiColor.toString()]))
+                  backgroundColor: MaterialStateProperty.all<Color?>(isEnabled
+                      ? _colors[kofiColor.toString()]
+                      : _colors[KofiColor.Grey.toString()]))
               .merge(style),
     );
   }
