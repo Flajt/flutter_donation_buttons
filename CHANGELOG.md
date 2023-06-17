@@ -39,3 +39,6 @@ Fixed some small staff in the documentation, tried to format the data better
 
 ## 0.2.7
 - Replace print with `debugPrint` in `try catch` statements
+
+## 0.3.7
+- Add `isEnabled` property to disable or enable Ko-fi and BuyMeACoffeButton. Thanks to [@maxmitchenko](https://github.com/maxmitchenko) for this feature
