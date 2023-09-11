@@ -42,3 +42,6 @@ Fixed some small staff in the documentation, tried to format the data better
 
 ## 0.3.7
 - Add `isEnabled` property to disable or enable Ko-fi and BuyMeACoffeButton. Thanks to [@maxmitchenko](https://github.com/maxmitchenko) for this feature
+
+## 0.4.7
+- Add Github Sponsor Button. Thanks for the suggestion to: [@bettysteger ](https://github.com/bettysteger)

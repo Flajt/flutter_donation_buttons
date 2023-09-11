@@ -42,7 +42,7 @@ The snippet below shows an example for an application that uses https URLs with 
 
 After you added the most recent version of this plugin to your *pubspec.yaml* file, you can start using it, by importing your desired button and add the required data. Which is mostly your name/id for this service which will be appended to the baseUrl.
 
-Each button allows to change the text of the button if you like.
+Each button allows to change the text, and style, of the button if you like.
 Kofi comes with 4 colors (taken from the offical brand site)
 
 You can now also run your own code after the button has been pressed, allowing you to run e.g. a Thank You message for what ever else you like. Notice: The package doesn't support checking if a user donated or just checked out your page!
@@ -95,7 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
               print("On Donation!");
               }),
             PayPalButton(paypalButtonId: "T6NT2YYTVX6VS"),
-            PatreonButton(patreonName: "buttonshy") // Just someone I stumbled accross on Patreon as an example, not affiliaited with him
+            PatreonButton(patreonName: "buttonshy"),
+             // Just someone I stumbled accross on Patreon as an example, not affiliaited with him
           ],
         ),
       ),
@@ -110,11 +111,12 @@ class _MyHomePageState extends State<MyHomePage> {
  - PayPal (Custom Colors)
  - Patreon (Default orange)
  - Buy Me A Coffe (5 Colors)
+ - Github Sponsor Button (1 Color)
 
 ### Need a different button? Or a Feature?
 Simply open a new issue on Github with your desired button and a link to their website, and I will try to add it asap.
 
 ### Like what you see?
-If you want to donate some bucks, feel free to do so.
+If you want to support me, feel free to do so.
 <br>
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J25543M)

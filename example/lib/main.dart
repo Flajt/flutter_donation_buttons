@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_donation_buttons/donationButtons/githubSponsorButton.dart';
 import 'package:flutter_donation_buttons/flutter_donation_buttons.dart';
 
 void main() {
@@ -30,6 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  //All names and links here are examples, some of them are mine, others are just random people I stumbled across
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: ButtonStyle(
                   fixedSize: MaterialStatePropertyAll(Size(250, 100))),
             ),
+            const GithubSponsorButton(githubUserName: "bettysteger")
           ],
         ),
       ),
