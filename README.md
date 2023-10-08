@@ -42,7 +42,7 @@ The snippet below shows an example for an application that uses https URLs with 
 
 After you added the most recent version of this plugin to your *pubspec.yaml* file, you can start using it, by importing your desired button and add the required data. Which is mostly your name/id for this service which will be appended to the baseUrl.
 
-Each button allows to change the text, and style, of the button if you like.
+Each button allows to change the text,  and style, of the button if you like.
 Kofi comes with 4 colors (taken from the offical brand site)
 
 You can now also run your own code after the button has been pressed, allowing you to run e.g. a Thank You message for what ever else you like. Notice: The package doesn't support checking if a user donated or just checked out your page!

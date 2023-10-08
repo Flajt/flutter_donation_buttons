@@ -45,3 +45,6 @@ Fixed some small staff in the documentation, tried to format the data better
 
 ## 0.4.7
 - Add Github Sponsor Button. Thanks for the suggestion to: [@bettysteger ](https://github.com/bettysteger)
+
+## 0.4.8
+- Add `githubSponsorButton` to barrel file

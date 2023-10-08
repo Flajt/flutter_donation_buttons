@@ -4,3 +4,4 @@ export './donationButtons/paypalButton.dart';
 export './donationButtons/ko-fiButton.dart';
 export './donationButtons/patreonButton.dart';
 export './donationButtons/buyMeACoffeeButton.dart';
+export './donationButtons/githubSponsorButton.dart';
