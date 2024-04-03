@@ -21,7 +21,7 @@ Example:
   <string>http</string>
 </array>
 ```
-### Anroid:
+### Android:
 Notice, I don't use the `canLaunch` as it sometimes returned false, but could still launch the url if tested.
 I also removed the snippets for tel, email etc. as this packge shouldn't need them. 
 
