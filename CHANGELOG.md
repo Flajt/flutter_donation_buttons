@@ -48,3 +48,8 @@ Fixed some small staff in the documentation, tried to format the data better
 
 ## 0.4.8
 - Add `githubSponsorButton` to barrel file
+
+## 0.4.10
+- Upgrade sdk range
+- Upgrade packages
+- Fix spelling in README thanks to [@ilovelinux](https://github.com/ilovelinux/)

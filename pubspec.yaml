@@ -1,17 +1,17 @@
 name: flutter_donation_buttons
 description: A collection of your most used donation/support buttons to support your development.
-version: 0.4.8
+version: 0.4.10
 homepage: https://github.com/Flajt/flutter_donation_buttons
 repository: https://github.com/Flajt/flutter_donation_buttons
 environment:
-  sdk: ">=2.14.0 <3.0.0"
+  sdk: ">=2.14.0 <4.0.0"
   flutter: ">=2.8.0"
 
 dependencies:
   flutter:
     sdk: flutter
   url_launcher: ^6.1.5
-  simple_icons: ^7.1.0
+  simple_icons: ^10.1.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
